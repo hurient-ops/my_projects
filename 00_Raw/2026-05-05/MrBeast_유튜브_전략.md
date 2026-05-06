@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD
 id: BP-2026-1548
+=======
+id: BP-2026-839
+>>>>>>> 3e13ada0d9783e0018f131e582028fc7f7b88857
 title: "MrBeast 유튜브 전략"
 type: "Training Program (The Construct)"
 category: "10_Wiki/🚀 Skills/The_Construct"

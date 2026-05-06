@@ -1,5 +1,9 @@
 {
   "tasksCompleted": 0,
+<<<<<<< HEAD
   "knowledgeInjected": 6,
+=======
+  "knowledgeInjected": 3,
+>>>>>>> 3e13ada0d9783e0018f131e582028fc7f7b88857
   "lastSessionDate": ""
 }
