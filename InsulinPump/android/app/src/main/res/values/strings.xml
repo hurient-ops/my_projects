@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">HealUs</string>
+    <string name="title_activity_main">HealUs</string>
+    <string name="package_name">com.antigravity.insulinpump</string>
+    <string name="custom_url_scheme">com.antigravity.insulinpump</string>
+</resources>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#eceeee",
+                    "on-primary-fixed-variant": "#004f52",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2e3131",
+                    "secondary-fixed": "#ffd9e1",
+                    "on-tertiary-fixed": "#0e1e1e",
+                    "background": "#f8fafa",
+                    "on-secondary-fixed-variant": "#8b0e45",
+                    "primary": "#1f6568",
+                    "tertiary": "#4f5f5f",
+                    "surface-variant": "#e1e3e3",
+                    "outline-variant": "#bfc8c8",
+                    "surface-tint": "#22686b",
+                    "on-tertiary-container": "#f3fffe",
+                    "on-primary-container": "#f3ffff",
+                    "surface-container-highest": "#e1e3e3",
+                    "outline": "#6f7979",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fd6c9c",
+                    "inverse-primary": "#90d2d5",
+                    "inverse-on-surface": "#eff1f1",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#b8cac9",
+                    "surface-dim": "#d8dada",
+                    "on-secondary-container": "#6e0034",
+                    "on-surface-variant": "#3f4849",
+                    "on-secondary-fixed": "#3f001b",
+                    "on-background": "#191c1d",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f2f4f4",
+                    "on-surface": "#191c1d",
+                    "surface-container-high": "#e6e8e9",
+                    "on-tertiary-fixed-variant": "#3a4a49",
+                    "secondary": "#ab2c5d",
+                    "primary-container": "#3c7e81",
+                    "surface-bright": "#f8fafa",
+                    "primary-fixed-dim": "#90d2d5",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#ffb1c5",
+                    "tertiary-container": "#677877",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#002021",
+                    "on-primary": "#ffffff",
+                    "surface": "#f8fafa",
+                    "tertiary-fixed": "#d4e6e5",
+                    "primary-fixed": "#aceef1",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-md": ["Manrope"],
+                    "data-lg": ["Manrope"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "data-lg": ["48px", {"lineHeight": "48px", "fontWeight": "800"}],
+                    "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafa; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .active-tab-indicator { position: absolute; bottom: 0; height: 3px; background-color: #1f6568; width: 40%; border-radius: 3px 3px 0 0; }
+        .shadow-soft { box-shadow: 0 4px 12px rgba(31, 101, 104, 0.05); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased flex flex-col min-h-screen max-w-[390px] mx-auto overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-[#E0E7E7] dark:border-slate-800 shadow-sm shadow-teal-900/5 sticky top-0 z-50 flex items-center px-4 h-16 w-full font-manrope antialiased">
+<button class="active:opacity-70 transition-all duration-200 text-teal-600 dark:text-teal-400 w-6">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold text-teal-800 dark:text-teal-200 flex-1 text-center">식사 설정</h1><div class="w-6"></div>
+</header>
+<main class="flex-grow px-margin-mobile pt-base pb-32">
+<!-- Info Banner -->
+<section class="mt-sm mb-md p-sm bg-primary-container rounded-xl flex items-start gap-3 shadow-soft">
+<span class="material-symbols-outlined text-on-primary-container mt-0.5" data-icon="info">info</span>
+<p class="text-label-sm font-body-md text-on-primary-container leading-tight">식사설정은 식사주입 때 필요한 인슐린 단위수(unit)를 미리 설정</p>
+</section>
+<!-- Form Sections -->
+<div class="space-y-md">
+<!-- Breakfast Setting -->
+<div class="space-y-xs">
+<div class="flex justify-between items-end px-xs">
+<label class="font-headline-md text-primary text-body-md font-semibold">아침설정 값</label>
+<span class="text-label-sm font-label-sm text-outline">최대: 20 (단위: U)</span>
+</div>
+<div class="relative group">
+<input class="w-full h-16 bg-surface-container-low border border-outline-variant rounded-xl px-md text-data-lg font-data-lg text-primary focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" readonly="" type="text" value="1.00 U"/>
+<div class="absolute right-md top-1/2 -translate-y-1/2 flex flex-col gap-1">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary" data-icon="keyboard_arrow_up">keyboard_arrow_up</span>
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+<!-- Lunch Setting -->
+<div class="space-y-xs">
+<div class="flex justify-between items-end px-xs">
+<label class="font-headline-md text-primary text-body-md font-semibold">점심설정 값</label>
+<span class="text-label-sm font-label-sm text-outline">최대: 20 (단위: U)</span>
+</div>
+<div class="relative group">
+<input class="w-full h-16 bg-surface-container-low border border-outline-variant rounded-xl px-md text-data-lg font-data-lg text-primary focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" readonly="" type="text" value="1.00 U"/>
+<div class="absolute right-md top-1/2 -translate-y-1/2 flex flex-col gap-1">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary" data-icon="keyboard_arrow_up">keyboard_arrow_up</span>
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+<!-- Dinner Setting -->
+<div class="space-y-xs">
+<div class="flex justify-between items-end px-xs">
+<label class="font-headline-md text-primary text-body-md font-semibold">저녁설정 값</label>
+<span class="text-label-sm font-label-sm text-outline">최대: 20 (단위: U)</span>
+</div>
+<div class="relative group">
+<input class="w-full h-16 bg-surface-container-low border border-outline-variant rounded-xl px-md text-data-lg font-data-lg text-primary focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" readonly="" type="text" value="1.00 U"/>
+<div class="absolute right-md top-1/2 -translate-y-1/2 flex flex-col gap-1">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary" data-icon="keyboard_arrow_up">keyboard_arrow_up</span>
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Illustration Bento-ish Card -->
+<div class="mt-lg p-sm bg-white border border-[#E0E7E7] rounded-xl shadow-soft flex items-center gap-md">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img alt="Healthy food bowl" class="w-full h-full object-cover" data-alt="Close-up of a colorful Buddha bowl with fresh vegetables and grains on a bright white table, soft natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4iGnQUowASf_Ohtf-iPyFteNOAUUInH8uxy7rmj2aLX7N3n2OcN21Ajc5xrAZ-sSE9_k2mHUgiUXwIExntMdGDe2cULHyJyOwzkZb_s_wVAW4DRqNl4-gAUKE7p8lkfcvvcESSZmXZ8QbBQfLVOPq00Q_jWzzQ6ucCJgR29PQXdIsSfj6pbybXYpcXhVWIFNKZMciY5rcKQCG01Q3oSB01XzJqbTDD8-gaS3fTwiV9IOoBY3MskUUtbw4Y383vaiWiDwdTCwgjWK4"/>
+</div>
+<div>
+<h4 class="font-headline-md text-body-md text-on-surface">식사 기록 팁</h4>
+<p class="text-label-sm font-body-md text-outline leading-tight mt-1">식사 15분 전 인슐린 투여가 혈당 스파이크 예방에 효과적입니다.</p>
+</div>
+</div>
+</main>
+<!-- Bottom Action Buttons Container -->
+<div class="fixed bottom-0 left-0 w-full p-margin-mobile bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-[#E0E7E7] dark:border-slate-800 z-40 flex gap-base">
+<button class="flex-1 h-14 bg-primary text-white font-headline-md rounded-full active:scale-95 transition-transform duration-150 flex items-center justify-center gap-xs">
+            저장
+        </button>
+<button class="flex-1 h-14 bg-surface-container-high text-on-surface-variant font-headline-md rounded-full active:scale-95 transition-transform duration-150 flex items-center justify-center gap-xs">
+            닫기
+        </button>
+</div>
+<!-- Hidden BottomNavBar (Suppressed due to focus task logic, but structure maintained for shell) -->
+<nav class="fixed bottom-0 left-0 w-full hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-[#E0E7E7] dark:border-slate-800 shadow-[0_-4px_12px_rgba(80,145,148,0.05)] justify-around items-center px-4 py-3 pb-safe z-50">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-teal-500">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[11px] font-manrope font-medium tracking-wide">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-900/20 rounded-xl px-3 py-1">
+<span class="material-symbols-outlined" data-icon="restaurant" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+<span class="text-[11px] font-manrope font-medium tracking-wide">Meals</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-teal-500">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="text-[11px] font-manrope font-medium tracking-wide">Insights</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-teal-500">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[11px] font-manrope font-medium tracking-wide">Profile</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>HEAL US</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-Dt7SNWP9.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D90wC9oc.css">
+</head>
+<body>
+  <!-- 헤더 -->
+  <header>
+    <div class="logo">HEAL US</div>
+    <div class="header-icons">
+      <i class="fas fa-sync-alt" id="sync-btn"></i>
+      <i class="fab fa-bluetooth-b" id="ble-connect-btn"></i>
+    </div>
+  </header>
+
+  <!-- 메인 대시보드 카드 -->
+  <main>
+    <div class="dashboard-card">
+      <div class="dash-content">
+        <h3 style="margin-bottom: 10px; font-size: 14px; font-weight: bold; color:#5f6368">금일 주입 내용</h3>
+        <div class="injection-row"><span class="label">기초주입</span> <span class="value" id="base-inj-val">0U</span></div>
+        <div class="injection-row"><span class="label">식사주입</span> <span class="value" id="eat-inj-val">0U</span></div>
+        <div class="injection-row"><span class="label">추가주입</span> <span class="value" id="add-inj-val">0U</span></div>
+        
+        <div class="ble-info" style="margin-top: 15px; margin-bottom: 10px;">
+          <i class="fab fa-bluetooth-b" style="color:#5f6368; font-size:12px; margin-right: 5px;"></i>
+          <div class="ble-details" style="display:inline-block;">
+            <div id="ble-mac" style="color:#aaa;font-size:10px;">연결 안됨</div>
+            <div id="ble-name" style="font-size:12px;color:#5f6368;">Heal Us</div>
+          </div>
+        </div>
+
+        <div class="progress-container mt-2">
+          <i class="fas fa-battery-three-quarters icon-grey"></i>
+          <div class="progress-bar"><div class="progress-fill" style="width: 75%; background-color: #207B7F;"></div></div>
+          <span class="progress-text">75 / 100</span>
+        </div>
+        <div class="progress-container">
+          <i class="fas fa-syringe icon-teal"></i>
+          <div class="progress-bar"><div class="progress-fill" style="width: 25%; background-color: #207B7F;"></div></div>
+          <span class="progress-text">75 / 300</span>
+        </div>
+      </div>
+      <div class="dash-image">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#207B7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg>
+      </div>
+    </div>
+
+    <!-- 메뉴 버튼들 -->
+    <div class="menu-grid">
+      <button class="menu-btn" data-modal="mealModal">
+        <i class="far fa-clock"></i> 식사 주입
+      </button>
+      <button class="menu-btn" data-modal="addModal">
+        <i class="fas fa-vial"></i> 추가 주입
+      </button>
+      <button class="menu-btn" data-modal="meetingModal">
+        <i class="fas fa-coffee"></i> 회식 적용
+      </button>
+      <button class="menu-btn" data-modal="exerciseModal">
+        <i class="fas fa-biking"></i> 운동 적용
+      </button>
+    </div>
+
+    <button class="emergency-btn" id="emergency-stop-btn">
+      <i class="far fa-stop-circle"></i> 긴급 정지
+    </button>
+  </main>
+
+  <!-- 하단 네비게이션 -->
+  <nav class="bottom-nav">
+    <div class="nav-item active"><i class="fas fa-home"></i></div>
+    <div class="nav-item"><i class="fas fa-cog"></i></div>
+    <div class="nav-item"><i class="far fa-calendar-alt"></i></div>
+    <div class="nav-item"><i class="fas fa-info-circle"></i></div>
+  </nav>
+
+  <!-- 모달 템플릿: 식사 주입 -->
+  <div id="mealModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>식사 주입</h2>
+      </div>
+      <div class="modal-body">
+        <div class="info-box">
+          식사주입은 식사설정에서 설정한 인슐린 단위수(unit) 만큼 주입<br>
+          - 식사주입 1회 주입완료 후 "2시간, 3시간" 주기로 제한하여 주입가능 (과다주입, 저혈당 쇼크 방지)<br>
+          - 식사설정에 설정된 단위수를 식사주입 메뉴로 이동, 수정하여 가감된 단위수를 주입할 수 있음
+        </div>
+        <div class="form-group">
+          <label>아침설정 값</label>
+          <input type="number" id="meal-morning" value="1.00" step="0.01">
+        </div>
+        <div class="form-group">
+          <label>점심설정 값</label>
+          <input type="number" id="meal-lunch" value="1.00" step="0.01">
+        </div>
+        <div class="form-group">
+          <label>저녁설정 값</label>
+          <input type="number" id="meal-dinner" value="1.00" step="0.01">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="btn-meal-inject">식사주입</button>
+        <button class="btn btn-secondary close-modal">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 모달 템플릿: 추가 주입 -->
+  <div id="addModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>추가 주입</h2>
+      </div>
+      <div class="modal-body">
+        <div class="info-box">
+          - 추가주입은 인슐린이 부족하다고 느낄 때 추가적으로 인슐린 단위수(unit)를 설정하여 주입<br>
+          - 1회 30Unit이상 연속주입가능, 1일 전체50Unit이상 주입가능<br>
+          (필요시 1일 주입제한 단위수내에서 계속주입 가능)
+        </div>
+        <div class="summary-table">
+          <div class="table-header" style="display:flex; justify-content:space-between; width:100%; font-size:12px; color:#777; margin-bottom:5px;">
+            <span>금일 주입 내용</span>
+            <span>(단위: U)</span>
+          </div>
+          <div class="table-row" style="display:flex; justify-content:space-around; font-size:14px; padding:10px 0; border-top:1px solid #ddd; border-bottom:1px solid #ddd;">
+            <span>기초 <span id="add-modal-base">0</span></span>
+            <span>식사 <span id="add-modal-eat">0.05</span></span>
+            <span>추가 <span id="add-modal-add">0</span></span>
+          </div>
+        </div>
+        <div class="form-group row-group" style="margin-top:15px;">
+          <div class="table-header" style="display:flex; justify-content:space-between; width:100%; font-size:12px; color:#777; margin-bottom:5px;">
+            <span>추가 주입 설정</span>
+            <span>(단위: U)</span>
+          </div>
+          <div class="select-row" style="display:flex; gap:10px; border-top:1px solid #ddd; padding-top:10px;">
+             <select id="add-unit-int" class="full-width-select" style="flex:1;"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+             <select id="add-unit-dec" class="full-width-select" style="flex:1;"><option value=".00">.00</option><option value=".05">.05</option><option value=".10">.10</option></select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="btn-add-inject">추가주입</button>
+        <button class="btn btn-secondary close-modal">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 모달 템플릿: 회식 적용 -->
+  <div id="meetingModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>회식 적용</h2>
+      </div>
+      <div class="modal-body">
+        <div class="info-box">
+          - 회식적용은 식사설정에 예약된 단위수를 비교적 적절한 회식시간을 추정하여 나누어 주입하는 기능<br>
+          - 회식시간을 1시간~8시간까지 설정, 회식시간 중 인슐린 양과 횟수를 실행 또는 해제가능
+        </div>
+        <div class="form-group">
+          <label style="background:#efefef; display:block; padding:5px 10px; color:#666; font-size:12px;">아침설정 값</label>
+          <input type="number" id="meet-morning" value="1.00" step="0.01" style="border:none; border-bottom:1px solid #ddd; border-radius:0;">
+        </div>
+        <div class="form-group">
+          <label style="background:#efefef; display:block; padding:5px 10px; color:#666; font-size:12px;">점심설정 값</label>
+          <input type="number" id="meet-lunch" value="1.00" step="0.01" style="border:none; border-bottom:1px solid #ddd; border-radius:0;">
+        </div>
+        <div class="form-group">
+          <label style="background:#efefef; display:block; padding:5px 10px; color:#666; font-size:12px;">저녁설정 값</label>
+          <input type="number" id="meet-dinner" value="1.00" step="0.01" style="border:none; border-bottom:1px solid #ddd; border-radius:0;">
+        </div>
+        <div class="form-group" style="margin-top:10px;">
+          <div class="table-header" style="display:flex; justify-content:space-between; width:100%; background:#efefef; padding:5px 10px; color:#666; font-size:12px; box-sizing:border-box;">
+             <span>시간 설정</span>
+             <span>(단위: 시간)</span>
+          </div>
+          <select class="full-width-select" id="meet-time" style="border:none; border-bottom:1px solid #ddd; border-radius:0;"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="btn-meet-apply">회식적용</button>
+        <button class="btn btn-secondary close-modal">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 모달 템플릿: 운동 적용 -->
+  <div id="exerciseModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>운동 적용</h2>
+      </div>
+      <div class="modal-body">
+        <div class="info-box">
+          운동적용은 "운동 할 시간"과 "감량 양"을 설정한 후 설정한 시간 만큼 기초설정의 설정 값을 감량하여 주입<br>
+          - 운동시간을 1시간~8시간까지 설정가능<br>
+          - 설정된 시간마다 운동감량양을 10%~100%까지 설정 또는 해제가능
+        </div>
+        <div class="form-group">
+          <div class="table-header" style="display:flex; justify-content:space-between; width:100%; background:#efefef; padding:5px 10px; color:#666; font-size:12px; box-sizing:border-box;">
+             <span>시간 설정</span>
+             <span>(단위: 시간)</span>
+          </div>
+          <select class="full-width-select" id="ex-time" style="border:none; border-bottom:1px solid #ddd; border-radius:0;"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        </div>
+        <div class="form-group">
+           <div class="table-header" style="display:flex; justify-content:space-between; width:100%; background:#efefef; padding:5px 10px; color:#666; font-size:12px; box-sizing:border-box; margin-top:10px;">
+             <span>감량 설정</span>
+             <span>(단위: %)</span>
+          </div>
+          <select class="full-width-select" id="ex-rate" style="border:none; border-bottom:1px solid #ddd; border-radius:0;"><option value="10">10</option><option value="20" selected>20</option><option value="30">30</option></select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="btn-ex-apply">운동적용</button>
+        <button class="btn btn-secondary close-modal">닫기</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

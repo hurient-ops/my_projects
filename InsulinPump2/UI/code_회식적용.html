@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>회식 적용</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f8fafa",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#ffb1c5",
+                        "secondary-container": "#fd6c9c",
+                        "tertiary-fixed": "#d4e6e5",
+                        "primary-fixed-dim": "#90d2d5",
+                        "on-secondary-container": "#6e0034",
+                        "on-primary-container": "#f3ffff",
+                        "on-primary-fixed-variant": "#004f52",
+                        "on-background": "#191c1d",
+                        "surface-container-high": "#e6e8e9",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eceeee",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f2f4f4",
+                        "inverse-surface": "#2e3131",
+                        "inverse-primary": "#90d2d5",
+                        "surface": "#f8fafa",
+                        "primary-fixed": "#aceef1",
+                        "on-tertiary-fixed-variant": "#3a4a49",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#bfc8c8",
+                        "tertiary-fixed-dim": "#b8cac9",
+                        "surface-dim": "#d8dada",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#f3fffe",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffd9e1",
+                        "secondary": "#ab2c5d",
+                        "surface-variant": "#e1e3e3",
+                        "on-surface": "#191c1d",
+                        "surface-tint": "#22686b",
+                        "inverse-on-surface": "#eff1f1",
+                        "tertiary": "#4f5f5f",
+                        "surface-container-highest": "#e1e3e3",
+                        "primary": "#1f6568",
+                        "on-surface-variant": "#3f4849",
+                        "on-secondary-fixed": "#3f001b",
+                        "on-primary-fixed": "#002021",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#0e1e1e",
+                        "outline": "#6f7979",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#677877",
+                        "surface-bright": "#f8fafa",
+                        "primary-container": "#3c7e81",
+                        "on-secondary-fixed-variant": "#8b0e45"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "gutter": "16px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "data-lg": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "display-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "data-lg": ["48px", { "lineHeight": "48px", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-950 font-['Manrope'] antialiased tracking-tight docked full-width top-0 border-b border-teal-50/50 dark:border-teal-900/20 shadow-[0_2px_15px_-3px_rgba(80,145,148,0.08)] flex justify-between items-center w-full px-4 h-16 z-50 sticky relative">
+<div class="flex items-center">
+<button class="p-2 text-slate-500 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-teal-900/30 transition-colors rounded-full active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-teal-700 dark:text-teal-300 absolute left-1/2 -translate-x-1/2">회식 적용</h1>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow p-margin-mobile flex flex-col gap-md max-w-2xl mx-auto w-full pb-24">
+<!-- Info Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_2px_15px_-3px_rgba(80,145,148,0.08)] border border-surface-container-high/50">
+<div class="flex gap-sm items-start">
+<span class="material-symbols-outlined text-primary mt-1">info</span>
+<p class="font-body-md text-body-md text-on-surface-variant">-회식적용은 식사설정에 예약된 단위수를 비교적 적절한 회식시간을 추정하여 나누어 주입하는 기능<br/>-회식시간을 1시간~8시간까지 설정, 회식시간 중 인슐린 양과 횟수를 실행 또는 해제가능</p>
+</div>
+</div>
+<!-- Settings Section -->
+<div class="flex flex-col gap-sm">
+<!-- Morning -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_2px_15px_-3px_rgba(80,145,148,0.08)] border border-surface-container-high/50 flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">아침 (Morning)</span>
+<div class="flex items-center gap-2">
+<input class="w-20 text-right bg-surface-container-low border border-outline-variant rounded-lg px-2 py-1 font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" step="0.01" type="number" value="1.00"/>
+</div>
+</div>
+<!-- Lunch -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_2px_15px_-3px_rgba(80,145,148,0.08)] border border-surface-container-high/50 flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">점심 (Lunch)</span>
+<div class="flex items-center gap-2">
+<input class="w-20 text-right bg-surface-container-low border border-outline-variant rounded-lg px-2 py-1 font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" step="0.01" type="number" value="1.00"/>
+</div>
+</div>
+<!-- Dinner -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_2px_15px_-3px_rgba(80,145,148,0.08)] border border-surface-container-high/50 flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">저녁 (Dinner)</span>
+<div class="flex items-center gap-2">
+<input class="w-20 text-right bg-surface-container-low border border-outline-variant rounded-lg px-2 py-1 font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" step="0.01" type="number" value="1.00"/>
+</div>
+</div>
+<!-- Time Selection -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_2px_15px_-3px_rgba(80,145,148,0.08)] border border-surface-container-high/50 flex justify-between items-center mt-sm">
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">시간 설정(단위: 시간)</span>
+<div class="relative w-24">
+<select class="w-full appearance-none bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 pr-8 font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
+<option value="1">1</option>
+<option selected="" value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-auto pt-md flex gap-sm"><button class="flex-1 bg-primary text-on-primary font-label-sm text-label-sm py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm active:scale-95 duration-150">
+                회식적용
+            </button>
+<button class="flex-1 bg-surface-container-high text-on-surface font-label-sm text-label-sm py-3 rounded-full hover:bg-surface-variant transition-colors shadow-sm active:scale-95 duration-150 border border-outline-variant/30">
+                닫기
+            </button></div>
+</main>
+<!-- Navigation Suppressed for this transactional screen -->
+</body></html>
