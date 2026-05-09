@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#6f7979",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#3f001b",
+                    "outline-variant": "#bfc8c8",
+                    "secondary": "#ab2c5d",
+                    "inverse-primary": "#90d2d5",
+                    "on-tertiary-container": "#f3fffe",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#aceef1",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#eff1f1",
+                    "on-surface": "#191c1d",
+                    "surface-container-highest": "#e1e3e3",
+                    "surface-dim": "#d8dada",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#22686b",
+                    "surface": "#f8fafa",
+                    "surface-container": "#eceeee",
+                    "on-secondary-fixed-variant": "#8b0e45",
+                    "secondary-fixed": "#ffd9e1",
+                    "on-background": "#191c1d",
+                    "surface-variant": "#e1e3e3",
+                    "tertiary-fixed-dim": "#b8cac9",
+                    "on-primary-fixed": "#002021",
+                    "surface-container-high": "#e6e8e9",
+                    "surface-container-low": "#f2f4f4",
+                    "inverse-surface": "#2e3131",
+                    "secondary-fixed-dim": "#ffb1c5",
+                    "tertiary": "#4f5f5f",
+                    "background": "#f8fafa",
+                    "surface-bright": "#f8fafa",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#f3ffff",
+                    "on-surface-variant": "#3f4849",
+                    "secondary-container": "#fd6c9c",
+                    "tertiary-container": "#677877",
+                    "on-tertiary-fixed-variant": "#3a4a49",
+                    "on-secondary-container": "#6e0034",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#0e1e1e",
+                    "error": "#ba1a1a",
+                    "primary-container": "#3c7e81",
+                    "primary": "#1f6568",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#004f52",
+                    "primary-fixed-dim": "#90d2d5",
+                    "tertiary-fixed": "#d4e6e5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "16px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "display-lg": ["Manrope"],
+                    "data-lg": ["Manrope"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Manrope"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "data-lg": ["48px", {"lineHeight": "48px", "fontWeight": "800"}],
+                    "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .pin-dot {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col items-center justify-between overflow-hidden">
+<!-- Top AppBar Component Shell -->
+<header class="flex justify-between items-center w-full px-4 h-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-sm shadow-[#509194]/5 fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#509194] dark:text-[#509194]" data-icon="medical_services">medical_services</span>
+<span class="font-manrope text-base font-semibold tracking-tight text-[#509194] dark:text-[#509194] text-xl font-bold">Heal Us</span>
+</div>
+<div class="flex items-center">
+</div>
+</header>
+<!-- Main Entry Canvas -->
+<main class="flex-1 w-full max-w-md mx-auto flex flex-col items-center justify-center px-margin-mobile pt-24 pb-8">
+<!-- Instructional Header -->
+<div class="text-center mb-12">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-2">암호 입력</h1>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-70">보안을 위해 비밀번호를 입력해 주세요</p>
+</div>
+<!-- PIN Indicator Dots -->
+<div class="flex gap-6 mb-16 h-4 items-center">
+<!-- Active/Filled Dot -->
+<div class="pin-dot w-4 h-4 rounded-full bg-primary shadow-sm shadow-primary/20"></div>
+<div class="pin-dot w-4 h-4 rounded-full bg-primary shadow-sm shadow-primary/20"></div>
+<!-- Inactive/Empty Dots -->
+<div class="pin-dot w-4 h-4 rounded-full bg-surface-container-highest border border-outline-variant"></div>
+<div class="pin-dot w-4 h-4 rounded-full bg-surface-container-highest border border-outline-variant"></div>
+<div class="pin-dot w-4 h-4 rounded-full bg-surface-container-highest border border-outline-variant"></div>
+<div class="pin-dot w-4 h-4 rounded-full bg-surface-container-highest border border-outline-variant"></div>
+</div>
+<!-- Numeric Keypad Grid -->
+<div class="grid grid-cols-3 gap-y-6 gap-x-12 w-full max-w-[300px] mb-8">
+<!-- Numbers 1-9 -->
+<button class="flex items-center justify-center w-20 h-20 rounded-full font-headline-md text-headline-md text-on-surface hover:bg-surface-container-low active:scale-95 transition-all duration-150">1</button>
+<button class="flex items-center justify-center w-20 h-20 rounded-full font-headline-md text-headline-md text-on-surface hover:bg-surface-container-low active:scale-95 transition-all duration-150">2</button>
+<button class="flex items-center justify-center w-20 h-20 rounded-full font-headline-md text-headline-md text-on-surface hover:bg-surface-container-low active:scale-95 transition-all duration-150">3</button>
+<button class="flex items-center justify-center w-20 h-20 rounded-full font-headline-md text-headline-md text-on-surface hover:bg-surface-container-low active:scale-95 transition-all duration-150">4</button>
+<button class="flex items-center justify-center w-20 h-20 rounded-full font-headline-md text-headline-md text-on-surface hover:bg-surface-container-low active:scale-95 transition-all duration-150">5</button>
+<button class="flex items-center justify-center w-20 h-20 rounded-full font-headline-md text-headline-md text-on-surface hover:bg-surface-container-low active:scale-95 transition-all duration-150">6</button>
+<button class="flex items-center justify-center w-20 h-20 rounded-full font-headline-md text-headline-md text-on-surface hover:bg-surface-container-low active:scale-95 transition-all duration-150">7</button>
+<button class="flex items-center justify-center w-20 h-20 rounded-full font-headline-md text-headline-md text-on-surface hover:bg-surface-container-low active:scale-95 transition-all duration-150">8</button>
+<button class="flex items-center justify-center w-20 h-20 rounded-full font-headline-md text-headline-md text-on-surface hover:bg-surface-container-low active:scale-95 transition-all duration-150">9</button>
+<!-- Bottom Row: Back, 0, Delete -->
+<button class="flex items-center justify-center w-20 h-20 rounded-full text-on-surface-variant active:scale-90 transition-transform"><span class="material-symbols-outlined text-[28px]" data-icon="close">close</span></button>
+<button class="flex items-center justify-center w-20 h-20 rounded-full font-headline-md text-headline-md text-on-surface hover:bg-surface-container-low active:scale-95 transition-all duration-150">0</button>
+<button class="flex items-center justify-center w-20 h-20 rounded-full text-secondary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[28px]" data-icon="backspace">backspace</span>
+</button>
+</div>
+<!-- Biometric Fallback -->
+</main>
+<!-- Footer Space -->
+<footer class="w-full pb-8 flex justify-center px-margin-mobile">
+<p class="text-label-sm font-label-sm text-outline opacity-60">비밀번호를 잊으셨나요?</p>
+</footer>
+<!-- BottomNavBar Suppressed as per "Destination" and "Task-Focused" Rules for PIN screen -->
+</body></html>
