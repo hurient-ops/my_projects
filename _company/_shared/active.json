@@ -14,5 +14,19 @@
   },
   "instagram": {
     "activatedAt": "2026-05-09T14:44:29.730Z"
-  }
+  },
+  "secretary": {
+    "activatedAt": "2026-05-11T05:08:39.218Z"
+  },
+  "youtube": {
+    "activatedAt": "2026-05-11T05:08:39.218Z"
+  },
+  "writer": {
+    "activatedAt": "2026-05-11T05:08:39.218Z"
+  },
+  "designer": {
+    "activatedAt": "2026-05-11T05:08:39.218Z"
+  },
+  "_migrated_v2": true,
+  "_migrated_v3": true
 }
