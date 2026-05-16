@@ -50,6 +50,91 @@
       "preAlarmsSent": [],
       "evidence": "완료: sessions/2026-05-13T07-39/_report.md\n- Researcher: 인슐린 펌프 제어 앱 개발과 관련하여, 현재 시장에 나와 있는 경쟁 제품들이 사용하는 BLE 통신 기술 스펙(프로토콜, 보안 기준 등)을 최신 \n- 현빈: 연구된 경쟁사 스펙 및 기술적 제약을 바탕으로, 우리가 개발할 앱의 최소 기능 제품(MVP)을 정의하고, 이 MVP를 시장에 출시했을 때 예상되\n\nCEO 종합 요점: ## 🗂 작업 라운드 — 누가 뭐 했나\n\n### 🔍 Researcher _(Trend & Data Researcher)_\n> 📋 **지시**: 인슐린 펌프 제어 앱 개발과 관련하여, 현재 시장에 나와 있는 경쟁 제품들이 사용하는 BLE 통신 기술 스펙(프로토콜, 보안 기준 등)을 최신 데이터로 수집하고, 필수적으로 고려해야 할 의료기기 규제 가이드라인",
       "completedAt": "2026-05-13T08:00:29.932Z"
+    },
+    {
+      "id": "20260516101841-bdf0",
+      "title": "모든 환자 데이터(혈당 수치, 펌프 상태)는 전송 시(BLE)와 저장 시 모두 최고 수준의 암호화(End-to-End Encryption)를 적용했는지 확인한다.",
+      "description": "자동 등록 (Researcher 산출물에서 추출)",
+      "owner": "agent",
+      "agentIds": [
+        "researcher"
+      ],
+      "createdAt": "2026-05-16T10:18:41.729Z",
+      "status": "done",
+      "sessionDir": "2026-05-16T10-14",
+      "nudges": 0,
+      "priority": "normal",
+      "preAlarmsSent": [],
+      "evidence": "완료: sessions/2026-05-16T10-14/_report.md\n- 코다리: Researcher가 제공한 의료기기 규제 가이드라인(researcher.md 참조)을 바탕으로, BLE 통신 보안 아키텍처 및 위험 구간 알림\n- Researcher: 개발팀이 정의한 BLE 통신 보안 아키텍처 및 위험 구간 알림 기능에 대해, 현재 확인된 의료기기 규제(SaMD 프레임워크) 준수 여부를 검토하\n\nCEO 종합 요점: ## 🗂 작업 라운드 — 누가 뭐 했나\n\n### 💻 코다리 _(시니어 풀스택 엔지니어)_\n> 📋 **지시**: Researcher가 제공한 의료기기 규제 가이드라인(researcher.md 참조)을 바탕으로, BLE 통신 보안 아키텍처 및 위험 구간 알림 기능의 기술적 구현 우선순위를 정의하고 구체적인 API/통신 모듈 설계 초안을 작성하라.\n> 🔧",
+      "completedAt": "2026-05-16T10:21:47.969Z"
+    },
+    {
+      "id": "20260516101841-lf6t",
+      "title": "접근 제어 목록(ACL)을 구현하여, 데이터에 접근할 수 있는 사용자 및 시스템 프로세스를 최소화하고 로깅한다.",
+      "description": "자동 등록 (Researcher 산출물에서 추출)",
+      "owner": "agent",
+      "agentIds": [
+        "researcher"
+      ],
+      "createdAt": "2026-05-16T10:18:41.731Z",
+      "status": "done",
+      "sessionDir": "2026-05-16T10-14",
+      "nudges": 0,
+      "priority": "normal",
+      "preAlarmsSent": [],
+      "evidence": "완료: sessions/2026-05-16T10-14/_report.md\n- 코다리: Researcher가 제공한 의료기기 규제 가이드라인(researcher.md 참조)을 바탕으로, BLE 통신 보안 아키텍처 및 위험 구간 알림\n- Researcher: 개발팀이 정의한 BLE 통신 보안 아키텍처 및 위험 구간 알림 기능에 대해, 현재 확인된 의료기기 규제(SaMD 프레임워크) 준수 여부를 검토하\n\nCEO 종합 요점: ## 🗂 작업 라운드 — 누가 뭐 했나\n\n### 💻 코다리 _(시니어 풀스택 엔지니어)_\n> 📋 **지시**: Researcher가 제공한 의료기기 규제 가이드라인(researcher.md 참조)을 바탕으로, BLE 통신 보안 아키텍처 및 위험 구간 알림 기능의 기술적 구현 우선순위를 정의하고 구체적인 API/통신 모듈 설계 초안을 작성하라.\n> 🔧",
+      "completedAt": "2026-05-16T10:21:47.990Z"
+    },
+    {
+      "id": "20260516101841-wzev",
+      "title": "데이터가 HIPAA/GDPR의 요구사항에 따라 안전하게 보관될 수 있는 물리적/논리적 환경(Secure Storage)을 설계한다.",
+      "description": "자동 등록 (Researcher 산출물에서 추출)",
+      "owner": "agent",
+      "agentIds": [
+        "researcher"
+      ],
+      "createdAt": "2026-05-16T10:18:41.733Z",
+      "status": "done",
+      "sessionDir": "2026-05-16T10-14",
+      "nudges": 0,
+      "priority": "normal",
+      "preAlarmsSent": [],
+      "evidence": "완료: sessions/2026-05-16T10-14/_report.md\n- 코다리: Researcher가 제공한 의료기기 규제 가이드라인(researcher.md 참조)을 바탕으로, BLE 통신 보안 아키텍처 및 위험 구간 알림\n- Researcher: 개발팀이 정의한 BLE 통신 보안 아키텍처 및 위험 구간 알림 기능에 대해, 현재 확인된 의료기기 규제(SaMD 프레임워크) 준수 여부를 검토하\n\nCEO 종합 요점: ## 🗂 작업 라운드 — 누가 뭐 했나\n\n### 💻 코다리 _(시니어 풀스택 엔지니어)_\n> 📋 **지시**: Researcher가 제공한 의료기기 규제 가이드라인(researcher.md 참조)을 바탕으로, BLE 통신 보안 아키텍처 및 위험 구간 알림 기능의 기술적 구현 우선순위를 정의하고 구체적인 API/통신 모듈 설계 초안을 작성하라.\n> 🔧",
+      "completedAt": "2026-05-16T10:21:48.008Z"
+    },
+    {
+      "id": "20260516101841-9xj5",
+      "title": "모든 기능(특히 위험 알림 로직)이 임상적 타당성을 입증하는 데이터와 함께 문서화되어야 한다. (Researcher의 검토 필수)",
+      "description": "자동 등록 (Researcher 산출물에서 추출)",
+      "owner": "agent",
+      "agentIds": [
+        "researcher"
+      ],
+      "createdAt": "2026-05-16T10:18:41.735Z",
+      "status": "done",
+      "sessionDir": "2026-05-16T10-14",
+      "nudges": 0,
+      "priority": "normal",
+      "preAlarmsSent": [],
+      "evidence": "완료: sessions/2026-05-16T10-14/_report.md\n- 코다리: Researcher가 제공한 의료기기 규제 가이드라인(researcher.md 참조)을 바탕으로, BLE 통신 보안 아키텍처 및 위험 구간 알림\n- Researcher: 개발팀이 정의한 BLE 통신 보안 아키텍처 및 위험 구간 알림 기능에 대해, 현재 확인된 의료기기 규제(SaMD 프레임워크) 준수 여부를 검토하\n\nCEO 종합 요점: ## 🗂 작업 라운드 — 누가 뭐 했나\n\n### 💻 코다리 _(시니어 풀스택 엔지니어)_\n> 📋 **지시**: Researcher가 제공한 의료기기 규제 가이드라인(researcher.md 참조)을 바탕으로, BLE 통신 보안 아키텍처 및 위험 구간 알림 기능의 기술적 구현 우선순위를 정의하고 구체적인 API/통신 모듈 설계 초안을 작성하라.\n> 🔧",
+      "completedAt": "2026-05-16T10:21:48.027Z"
+    },
+    {
+      "id": "20260516101841-559b",
+      "title": "사용자 동의(Consent) 절차를 구현하여, 사용자가 자신의 데이터가 어떻게 처리되는지 명확히 이해하고 자발적으로 동의하도록 한다.",
+      "description": "자동 등록 (Researcher 산출물에서 추출)",
+      "owner": "agent",
+      "agentIds": [
+        "researcher"
+      ],
+      "createdAt": "2026-05-16T10:18:41.736Z",
+      "status": "done",
+      "sessionDir": "2026-05-16T10-14",
+      "nudges": 0,
+      "priority": "normal",
+      "preAlarmsSent": [],
+      "evidence": "완료: sessions/2026-05-16T10-14/_report.md\n- 코다리: Researcher가 제공한 의료기기 규제 가이드라인(researcher.md 참조)을 바탕으로, BLE 통신 보안 아키텍처 및 위험 구간 알림\n- Researcher: 개발팀이 정의한 BLE 통신 보안 아키텍처 및 위험 구간 알림 기능에 대해, 현재 확인된 의료기기 규제(SaMD 프레임워크) 준수 여부를 검토하\n\nCEO 종합 요점: ## 🗂 작업 라운드 — 누가 뭐 했나\n\n### 💻 코다리 _(시니어 풀스택 엔지니어)_\n> 📋 **지시**: Researcher가 제공한 의료기기 규제 가이드라인(researcher.md 참조)을 바탕으로, BLE 통신 보안 아키텍처 및 위험 구간 알림 기능의 기술적 구현 우선순위를 정의하고 구체적인 API/통신 모듈 설계 초안을 작성하라.\n> 🔧",
+      "completedAt": "2026-05-16T10:21:48.050Z"
     }
   ]
 }
